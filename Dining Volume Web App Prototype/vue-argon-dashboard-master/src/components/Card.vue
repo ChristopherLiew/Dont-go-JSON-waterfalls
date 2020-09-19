@@ -67,4 +67,7 @@ export default {
 };
 </script>
 <style>
+.card-header {
+  background-color: red;
+}
 </style>
