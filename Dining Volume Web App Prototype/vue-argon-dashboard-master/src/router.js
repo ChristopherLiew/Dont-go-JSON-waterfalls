@@ -31,9 +31,14 @@ export default new Router({
           component: () => import(/* webpackChunkName: "demo" */ './views/UserProfile.vue')
         },
         {
+          path: '/reservations',
+          name: 'reservations',
+          component: () => import(/* webpackChunkName: "demo" */ './views/ThankyYou.vue')
+        },
+        {
           path: '/maps',
           name: 'maps',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Maps.vue')
+          component: () => import(/* webpackChunkName: "demo" */ './views/CheckOut.vue')
         },
         {
           path: '/tables',
