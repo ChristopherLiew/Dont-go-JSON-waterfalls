@@ -12,6 +12,13 @@
                 </base-input>
             </div>
         </form>
+
+        <!-- Notifcation Button -->
+        <base-button size="md" icon="ni ni-bell-55" type="danger">
+          <badge size="sm" type="white" >8</badge>
+        </base-button>
+
+        <!-- User Nav Bar -->
         <ul class="navbar-nav align-items-center d-none d-md-flex">
             <li class="nav-item dropdown">
                 <base-dropdown class="nav-link pr-0">

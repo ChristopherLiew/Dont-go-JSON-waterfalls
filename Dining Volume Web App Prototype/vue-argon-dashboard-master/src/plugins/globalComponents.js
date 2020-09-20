@@ -17,7 +17,6 @@ import StatsCard from "../components/StatsCard";
 import Modal from "../components/Modal";
 import TabPane from "../components/Tabs/TabPane";
 import Tabs from "../components/Tabs/Tabs";
-import QuantityCounter from "../components/QuantityCounter";
 
 export default {
   install(Vue) {
@@ -40,6 +39,5 @@ export default {
     Vue.component(Modal.name, Modal);
     Vue.component(TabPane.name, TabPane);
     Vue.component(Tabs.name, Tabs);
-    Vue.component(QuantityCounter.name, QuantityCounter);
   }
 };
