@@ -40,12 +40,12 @@ export default {
 <style scope>
 
 span {
-    padding:15px;
+    padding:10px;
 }
 .clickbut {
 
   border-radius: 8px;
-  padding: 12px 28px;
+  padding: 5px 15px;
   background-color: #4CAF50;
   border: 2px solid #4CAF50;
   color: white;

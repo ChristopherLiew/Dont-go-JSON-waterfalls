@@ -46,9 +46,4 @@
     }
   };
 </script>
-<style>
-row {
-  background-color: red;
-}
-</style>
-
+<style></style>
