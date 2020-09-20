@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-xl-3 col-lg-6">
                     <stats-card title="Vacancies"
-                                type="gradient-green"
+                                type="gradient-pink"
                                 sub-title="12"
                                 icon="ni ni-air-baloon"
                                 class="mb-4 mb-xl-0"
@@ -66,7 +66,7 @@
         <!--Charts-->
         <div class="container-fluid mt--7">
             <div class="row">
-                <div class="col-xl-8 mb-5 mb-xl-0">
+                <div class="col-xl-6 mb-5 mb-xl-0">
                     <card type="default" header-classes="bg-transparent">
                         <div slot="header" class="row align-items-center">
                             <div class="col">
@@ -107,7 +107,7 @@
                     </card>
                 </div>
                 <!-- Restaurant Info Card -->
-                <div class="col-xl-4">
+                <div class="col-xl-6">
                     <card header-classes="bg-transparent">
                         <div slot="header" class="row align-items-center">
                             <div class="col">
@@ -184,7 +184,7 @@
                           </flat-picker>
                         </base-input>
                       </div>
-                        <base-button type="danger" icon="ni ni-check-bold">Reserve Now</base-button>
+                        <base-button type="danger" icon="ni ni-check-bold" >Reserve Now</base-button>
                     </card>
                 </div>
             </div>
@@ -192,7 +192,7 @@
 
             <!--Tables-->
             <div class="row mt-5">
-                <div class="col-xl-8 mb-5 mb-xl-0">
+                <div class="col-xl-12 mb-5 mb-xl-0">
                     <RestaurantNotifsTable></RestaurantNotifsTable> <!-- Change to Latest Reviews -->
                 </div>
             </div>

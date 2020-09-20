@@ -7,6 +7,7 @@ Vue.use(Router)
 export default new Router({
   linkExactActiveClass: 'active',
   routes: [
+    // Add in path from reservation button to health declaration to menu to checkout page and confirmation
     {
       path: '/',
       redirect: 'dashboard',
@@ -14,7 +15,7 @@ export default new Router({
       children: [
         {
           path: '/dashboard',
-          name: 'dashboard',
+          name: 'Home',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
@@ -26,19 +27,34 @@ export default new Router({
           component: () => import(/* webpackChunkName: "demo" */ './views/Icons.vue')
         },
         {
+          path: '/checkoutpage',
+          name: 'checkout',
+          component: () => import(/* webpackChunkName: "demo" */ './views/CheckOutPage.vue')
+        },
+        {
+          path: '/confirmationpage',
+          name: 'confirmation',
+          component: () => import(/* webpackChunkName: "demo" */ './views/ConfirmationPage.vue')
+        },
+        {
+          path: '/healthdeclaration',
+          name: 'Safe Dining Measures & Health Declaration',
+          component: () => import(/* webpackChunkName: "demo" */ './views/HealthDeclaration.vue')
+        },
+        {
+          path: '/menu',
+          name: 'menu',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Menu.vue')
+        },
+        {
           path: '/profile',
           name: 'profile',
           component: () => import(/* webpackChunkName: "demo" */ './views/UserProfile.vue')
         },
         {
-          path: '/reservations',
-          name: 'reservations',
-          component: () => import(/* webpackChunkName: "demo" */ './views/ThankyYou.vue')
-        },
-        {
           path: '/maps',
           name: 'maps',
-          component: () => import(/* webpackChunkName: "demo" */ './views/CheckOut.vue')
+          component: () => import(/* webpackChunkName: "demo" */ './views/Maps.vue')
         },
         {
           path: '/tables',
