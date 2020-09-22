@@ -14,7 +14,7 @@
         </form>
 
         <!-- Notifcation Button -->
-        <base-button size="md" icon="ni ni-bell-55" type="danger">
+        <base-button size="sm" icon="ni ni-bell-55" type="danger">
           <badge size="sm" type="white" >8</badge>
         </base-button>
 

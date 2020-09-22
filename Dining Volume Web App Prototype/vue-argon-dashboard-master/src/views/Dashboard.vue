@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-xl-3 col-lg-6">
                     <stats-card title="Total Capacity"
-                                type="gradient-orange"
+                                type="gradient-purple"
                                 sub-title="54"
                                 icon="ni ni-shop"
                                 class="mb-4 mb-xl-0"
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-xl-3 col-lg-6">
                     <stats-card title="Vacancies"
-                                type="gradient-pink"
+                                type="gradient-orange"
                                 sub-title="12"
                                 icon="ni ni-air-baloon"
                                 class="mb-4 mb-xl-0"
@@ -104,6 +104,50 @@
                         >
                         </line-chart>
 
+                    </card> 
+                    <br>
+                    <!-- Safety Report Card -->
+                    <card type="default" header-classes="bg-transparent">
+                        <div slot="header" class="row align-items-center">
+                            <div class="col">
+                              <h5 class="h2 text-left text-white mb-1">Les Bouchons</h5>
+                              <h6 class="text-light text-left text-uppercase ls-1 mb-1">COVID19 Safety Report Card</h6>
+                              <h6 class="text-light text-left text-uppercase ls-1 mb-4"></h6>
+                              <br>
+                              <div class="row">
+                                <div class="col">
+                                <div class="card bg-primary shadow border-2">
+                                  <h5 class="h3 text-left text-white mb-0 p-3"> Daily Temperature Checks <i class="ni ni-single-02"></i></h5>
+                                  <p class="h4 text-left text-white mb-0 p-3">This restaurant conducts daily temperature checks to ensure the health and safety of its team members</p>
+                                </div>
+                                </div>
+                                <div class="col">
+                                  <div class="card bg-danger shadow border-2">
+                                  <h5 class="h3 text-white mb-0 p-3"> Regular Disinfection <i class="ni ni-trophy"></i></h5>
+                                  <p class="h4 text-white mb-0 p-3">This restaurant disinfects its tables regularly after each visit</p> 
+                                  <br>
+                                  <br>
+                                </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                <div class="card bg-info shadow border-2">
+                                 <h5 class="h3 text-white mb-0 p-3"> Protective Equipment <i class="ni ni-diamond"></i></h5>
+                                  <p class="h4 text-white mb-0 p-3">This restaurant ensures that its team members are equipped with adequate gear to keep everyone safe</p>
+                                </div>
+                                </div>
+                                <div class="col">
+                                  <div class="card bg-warning shadow border-2">
+                                 <h5 class="h3 text-white mb-0 p-3"> Hand Hygiene Advocate <i class="ni ni-like-2"></i></h5>
+                                  <p class="h4 text-white mb-0 p-3">This restaurant provides access to hand sanitisers at strategic locations throughout the premises</p>
+                                <br>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                            </div>
                     </card>
                 </div>
                 <!-- Restaurant Info Card -->
@@ -173,18 +217,34 @@
                           </div>
                         </div>
                         <br>
-                        <div class="row">
+                      <div class="row">
                           <div class="col-sm">
                             <span class="h4 mb-0">Pick a date to visit</span>
                           </div>
                         </div>
-                      <div>
+                        <p></p>
+                        <div class="row">
+                      <div class="col-lg">
                         <base-input addon-left-icon="ni ni-calendar-grid-58">
                           <flat-picker slot-scope="{focus, blur}" @on-open="focus" @on-close="blur" :config="{allowInput: true, enableTime: true, altInput: true, altFormat: 'F j, Y H:i',dateFormat: 'Y-m-d H:i'}" class="form-control datepicker" v-model="dates.simple">
                           </flat-picker>
                         </base-input>
                       </div>
-                        <base-button type="danger" icon="ni ni-check-bold" >Reserve Now</base-button>
+                      <div class="col-lg">
+                        <base-dropdown>
+                          <base-button v-model="pax" icon="ni ni-single-02" slot="title" type="primary" class="dropdown-toggle">{{pax}}</base-button>
+                              <a class="dropdown-item" @click="updatePax('1 Pax')">1 Pax</a>
+                              <a class="dropdown-item" @click="updatePax('2 Pax')">2 Pax</a>
+                              <a class="dropdown-item" @click="updatePax('3 Pax')">3 Pax</a>
+                              <a class="dropdown-item" @click="updatePax('4 Pax')">4 Pax</a>
+                              <a class="dropdown-item" @click="updatePax('5 Pax')">5 Pax</a>
+                          </base-dropdown>
+                      </div>
+                        </div>
+                      <br>
+                        <div class="col-sm">
+                        <base-button block type="danger" icon="ni ni-check-bold" >Reserve Now</base-button>
+                      </div>
                     </card>
                 </div>
             </div>
@@ -202,6 +262,8 @@
     </div>
 </template>
 <script>
+ 
+
   // Date Input
   import flatPicker from "vue-flatpickr-component";
   import "flatpickr/dist/flatpickr.css";
@@ -221,6 +283,7 @@
     },
     data() {
       return {
+        pax: "Size of Party",
         bigLineChart: {
           allData: [
             [0, 20, 10, 30, 15, 40, 20, 60, 60],
@@ -260,6 +323,10 @@
         };
         this.bigLineChart.chartData = chartData;
         this.bigLineChart.activeIndex = index;
+      },
+       // Functions
+      updatePax: function(text) {
+        this.pax = text;
       }
     },
     mounted() {

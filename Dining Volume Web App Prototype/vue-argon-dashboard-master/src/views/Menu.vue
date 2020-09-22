@@ -177,7 +177,7 @@
             </div>    
             <br>
             <div>
-                <base-button block type="danger" icon="ni ni-active-40">Proceed to Order</base-button>
+                <base-button block type="danger">Proceed to Order</base-button>
             </div>
         </base-header>  
     </div>                    
