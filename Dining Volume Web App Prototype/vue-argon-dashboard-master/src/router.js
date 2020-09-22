@@ -60,6 +60,11 @@ export default new Router({
           path: '/tables',
           name: 'tables',
           component: () => import(/* webpackChunkName: "demo" */ './views/Tables.vue')
+        },
+        {
+          path: '/restaurant_backend',
+          name: 'retaurant management portal',
+          component: () => import(/* webpackChunkName: "demo" */ './views/RestaurantBackend_SeatUpdate.vue')
         }
       ]
     },

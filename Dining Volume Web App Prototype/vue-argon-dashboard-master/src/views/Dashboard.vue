@@ -67,7 +67,7 @@
         <div class="container-fluid mt--7">
             <div class="row">
                 <div class="col-xl-6 mb-5 mb-xl-0">
-                    <card type="default" header-classes="bg-transparent">
+                    <card header-classes="bg-transparent">
                         <div slot="header" class="row align-items-center">
                             <div class="col">
                                 <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
