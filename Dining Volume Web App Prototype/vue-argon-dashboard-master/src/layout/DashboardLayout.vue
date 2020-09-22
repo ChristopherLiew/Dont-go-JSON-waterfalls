@@ -22,6 +22,7 @@
         <sidebar-item :link="{name: 'Find Places', icon: 'ni ni-square-pin text-orange', path: '/maps'}"/>
         <sidebar-item :link="{name: 'Login', icon: 'ni ni-key-25 text-info', path: '/login'}"/>
         <sidebar-item :link="{name: 'Join Us', icon: 'ni ni-circle-08 text-pink', path: '/register'}"/>
+        <sidebar-item :link="{name: 'For Owners', icon: 'ni ni-spaceship text-black', path: '/restaurant_backend'}"/>
         <sidebar-item :link="{name: 'Logout', icon: 'ni ni-user-run text-purple', path: '/register'}"/>
 
       </template>

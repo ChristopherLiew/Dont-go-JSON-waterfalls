@@ -90,11 +90,11 @@
                                 <h2> Payment Method: </h2>
                                 <div class = "row">
                                     <div class =  "col-sm-5">
-                                        <input type="radio" id="one" value="One" v-model="picked">
+                                        <input type="radio" id="one" value="One" v-model="picked"> <!-- Change to Bootstrap Radio Buttons | See argon docs-->
                                         <label for="one" style=font-size:16px>MasterCard / Visa</label>
                                     </div>
                                     <div class=  "col-sm-5">
-                                        <input type="radio" id="two" value="Two" v-model="picked">
+                                        <input type="radio" id="two" value="Two" v-model="picked"> <!-- Change to Bootstrap Radio Buttons | See argon docs -->
                                         <label for="two" style=font-size:16px>Cash</label>
                                     </div>
                                 </div>
