@@ -2,125 +2,203 @@
     <div>
 
         <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
-            <!-- Card stats -->
-            <div class="row">
-                <div class="col-xl-3 col-lg-6">
-                    <stats-card title="Total traffic"
-                                type="gradient-red"
-                                sub-title="350,897"
-                                icon="ni ni-active-40"
-                                class="mb-4 mb-xl-0"
-                    >
-
-                        <template slot="footer">
-                            <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </template>
-                    </stats-card>
-                </div>
-                <div class="col-xl-3 col-lg-6">
-                    <stats-card title="Total traffic"
-                                type="gradient-orange"
-                                sub-title="2,356"
-                                icon="ni ni-chart-pie-35"
-                                class="mb-4 mb-xl-0"
-                    >
-
-                        <template slot="footer">
-                            <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 12.18%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </template>
-                    </stats-card>
-                </div>
-                <div class="col-xl-3 col-lg-6">
-                    <stats-card title="Sales"
-                                type="gradient-green"
-                                sub-title="924"
-                                icon="ni ni-money-coins"
-                                class="mb-4 mb-xl-0"
-                    >
-
-                        <template slot="footer">
-                            <span class="text-danger mr-2"><i class="fa fa-arrow-down"></i> 5.72%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </template>
-                    </stats-card>
-
-                </div>
-                <div class="col-xl-3 col-lg-6">
-                    <stats-card title="Performance"
-                                type="gradient-info"
-                                sub-title="49,65%"
-                                icon="ni ni-chart-bar-32"
-                                class="mb-4 mb-xl-0"
-                    >
-
-                        <template slot="footer">
-                            <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 54.8%</span>
-                            <span class="text-nowrap">Since last month</span>
-                        </template>
-                    </stats-card>
-                </div>
-            </div>
-        </base-header>
-
-        <div class="container-fluid mt--7">
-            <div class="row">
-                <div class="col">
-                    <div class="card shadow border-0">
-                        <div id="map-canvas" class="map-canvas" data-lat="40.748817" data-lng="-73.985428" style="height: 600px;"></div>
-                    </div>
-                </div>
-            </div>
+        <div style=margin-left:2%><h1 style=font-size:50px>Find Places!</h1></div>
+        <div class ="row">
+        <div class="col-sm-3">
+            <input
+            type="text"
+            background= "https://cdn4.iconfinder.com/data/icons/36-slim-icons/87/calender.png"
+            placeholder="Location"
+            class="trial">
         </div>
+        <div class="col-sm-2">
+            <multiselect v-model="value" :options="options" :multiple="true" placeholder="Number of Seaters"></multiselect>
+        </div>
+
+        <div class="col-sm-2">
+            <multiselect v-model="value1" :options="options1" :multiple="true" placeholder="Price Range" style=font-size:20px ></multiselect>
+        </div>
+
+        <div class="col-sm-2">
+           <multiselect v-model="value2" :options="options2" :multiple="true" placeholder= "Lvl of Crowdedness"></multiselect>
+        </div>
+
+        <div class="col-sm-3">
+            <multiselect v-model="value3" :options="options3" :multiple="true" placeholder = "Measures of Precaution"></multiselect>
+        </div>
+        </div>
+        <p></p>
+        <p></p>
+        <hr>
+        <div class = "row">
+        <div class = "col-sm-7">
+            <img :src="maps" style="width:100%" alt="...">
+        </div>
+        <div class = "col-sm-5">
+        
+                    <card header-classes="bg-transparent">
+                        <div slot="header" class="row align-items-center">
+                            <div class="col">
+                                <h3 class="text-uppercase text-muted ls-1 mb-1">Les Bouchons · Steak House</h3>
+                                <h3 style="color: #2dce89;">OPEN</h3>
+                            </div>
+                        </div>
+                        <!-- Quick Links (Remember to link) -->
+                        <div class="row justify-content-md-center">
+                          <div class="col-md-auto">
+                          <base-button type="info" icon="ni ni-world-2">Website</base-button>
+                          </div>
+                          <div class="col-md-auto">
+                          <base-button type="success" icon="ni ni-square-pin">Directions</base-button>
+                          </div>
+                          <div class="col-md-auto">
+                          <base-button type="danger" icon="ni ni-favourite-28">Save</base-button>
+                          </div>
+                        </div>
+                        <br>
+                        <div>
+                          <!-- Restaurant Photos (Add Carousel?)-->
+                          <div style>
+                            <img id="restProfilePic" alt="Image placeholder" src="img/theme/les_bouchons_rest.png" style= width:100%>
+                          </div>
+                        </div>
+
+                        <!-- Restaurant Details -->
+                        <br>
+                        <div class="row">
+                          <div class="col-md-auto">
+                            <span class="h5 mb-0"><i class="ni ni-check-bold text-green"></i> Dine-In</span>
+                          </div>
+                          <div class="col-md-auto">
+                            <span class="h5 mb-0"><i class="ni ni-check-bold text-green"></i> Take-Away</span>
+                          </div>
+                          <div class="col-md-auto">
+                            <span class="h5 mb-0"><i class="ni ni-fat-remove text-red"></i> No-Contact Delivery</span>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-sm">
+                            <span class="h4 mb-0">Address: </span><span class="p mb-0">60 Robertson Quay, #01-02, Singapore 238252</span>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-sm">
+                            <span class="h4 mb-0">Hours: </span><span class="p mb-0"> 11 am ~ 11 pm</span><span class="h3 mb-0"> · </span><span class="p mb-0"> Mondays to Sundays</span>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-sm">
+                            <span class="h4 mb-0">Phone: </span><span class="p mb-0">60 Robertson Quay, #01-02, Singapore 238252</span>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-sm">
+                            <span class="h4 mb-0">Order: </span><span class="p mb-0">deliveroo.com.sg | foodpanda.sg</span>
+                          </div>
+                        </div>
+                        <br>
+                      <div class="row">
+                          <div class="col-sm">
+                            <span class="h4 mb-0">Pick a date to visit</span>
+                          </div>
+                        </div>
+                        <p></p>
+                        <div class="row">
+                      <div class="col-lg">
+                        <base-input addon-left-icon="ni ni-calendar-grid-58">
+                          <flat-picker slot-scope="{focus, blur}" @on-open="focus" @on-close="blur" :config="{allowInput: true, enableTime: true, altInput: true, altFormat: 'F j, Y H:i',dateFormat: 'Y-m-d H:i'}" class="form-control datepicker" v-model="dates.simple">
+                          </flat-picker>
+                        </base-input>
+                      </div>
+                      <div class="col-lg">
+                        <base-dropdown>
+                          <base-button v-model="pax" icon="ni ni-single-02" slot="title" type="primary" class="dropdown-toggle">{{pax}}</base-button>
+                              <a class="dropdown-item" @click="updatePax('1 Pax')">1 Pax</a>
+                              <a class="dropdown-item" @click="updatePax('2 Pax')">2 Pax</a>
+                              <a class="dropdown-item" @click="updatePax('3 Pax')">3 Pax</a>
+                              <a class="dropdown-item" @click="updatePax('4 Pax')">4 Pax</a>
+                              <a class="dropdown-item" @click="updatePax('5 Pax')">5 Pax</a>
+                          </base-dropdown>
+                      </div>
+                        </div>
+                      <br>
+                        <div class="col-sm">
+                        <base-button block type="danger" icon="ni ni-check-bold" >Reserve Now</base-button>
+                      </div>
+                    </card>
+                
+            </div>
+        
+        </div>
+        
+        
+        </base-header>
+        
+        
+        
+
+      
+        
+
+        
     </div>
 </template>
 <script>
-  export default {
-    mounted() {
-      let google= window.google
-      let map = document.getElementById('map-canvas');
-      let lat = map.getAttribute('data-lat');
-      let lng = map.getAttribute('data-lng');
+import Multiselect from 'vue-multiselect'
 
-      const myLatlng = new google.maps.LatLng(lat, lng);
-      const mapOptions = {
-        zoom: 12,
-        scrollwheel: false,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        styles: [
-          {"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},
-          {"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},
-          {"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},
-          {"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},
-          {"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},
-          {"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
-          {"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},
-          {"featureType":"water","elementType":"all","stylers":[{"color":'#5e72e4'},{"visibility":"on"}]}]
+export default {
+    // OR register locally
+    components: { Multiselect },
+    data () {
+      return {
+        value: [],
+        options: ['3 seaters', '4 seaters', '5 seaters'],
+        value1: [],
+        options1: ['$5-10','$10-25','$25-50'],
+        value2: [],
+        options2: ['Low','Moderate','High'],
+        value3: [],
+        options3: ['Low','Moderate','High']
+        
       }
-
-      map = new google.maps.Map(map, mapOptions);
-
-      const marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        animation: google.maps.Animation.DROP,
-        title: 'Hello World!'
-      });
-
-      const contentString = '<div class="info-window-content"><h2>Argon Dashboard</h2>' +
-        '<p>A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</p></div>';
-
-      const infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map, marker);
-      });
-    }
+    },
+    props: {
+      maps: {
+        type: String,
+        default: 'img/brand/mapspinning.jfif',
+        description: 'tick mark'
+      }
   }
+}
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
+
+
+.trial {
+    margin-left:10%;
+  border-radius: 20px;
+  padding: 10px;
+  width: 90%;
+  
+padding-left:30px;
+  background-color: white;
+  border: 2px solid #4CAF50;
+  color: black;
+  outline: none; /* removes the outer border when button is in focus */
+  text-align: left;
+  font-size:20px;
+  
+}
+
+.multiselect__tags {
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+
 </style>
