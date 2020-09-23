@@ -18,6 +18,9 @@ import Modal from "../components/Modal";
 import TabPane from "../components/Tabs/TabPane";
 import Tabs from "../components/Tabs/Tabs";
 
+
+
+
 export default {
   install(Vue) {
     Vue.component(Badge.name, Badge);
@@ -39,5 +42,10 @@ export default {
     Vue.component(Modal.name, Modal);
     Vue.component(TabPane.name, TabPane);
     Vue.component(Tabs.name, Tabs);
+   
+    
+   
+  
+    
   }
 };
