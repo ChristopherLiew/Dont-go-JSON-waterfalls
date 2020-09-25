@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <base-button block type="danger">Place Order</base-button>
+                            <router-link to="/confirmationpage"><base-button block type="danger">Place Order</base-button></router-link>
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ export default new Router({
   linkExactActiveClass: 'active',
   routes: [
     // Add in path from reservation button to health declaration to menu to checkout page and confirmation
-    {
+      {
       path: '/',
       redirect: 'dashboard',
       component: DashboardLayout,
@@ -54,7 +54,7 @@ export default new Router({
         {
           path: '/maps',
           name: 'maps',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Maps.vue')
+          component: () => import(/* webpackChunkName: "demo" */ './views/Location.vue')
         },
         {
           path: '/tables',

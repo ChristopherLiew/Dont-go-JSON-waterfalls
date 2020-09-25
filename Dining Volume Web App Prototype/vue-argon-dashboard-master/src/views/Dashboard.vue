@@ -68,42 +68,7 @@
             <div class="row">
                 <div class="col-xl-6 mb-5 mb-xl-0">
                     <card header-classes="bg-transparent">
-                        <div slot="header" class="row align-items-center">
-                            <div class="col">
-                                <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                                <h5 class="h3 text-white mb-0">Sales value</h5>
-                            </div>
-                            <div class="col">
-                                <ul class="nav nav-pills justify-content-end">
-                                    <li class="nav-item mr-2 mr-md-0">
-                                        <a class="nav-link py-2 px-3"
-                                           href="#"
-                                           :class="{active: bigLineChart.activeIndex === 0}"
-                                           @click.prevent="initBigChart(0)">
-                                            <span class="d-none d-md-block">Month</span>
-                                            <span class="d-md-none">M</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link py-2 px-3"
-                                           href="#"
-                                           :class="{active: bigLineChart.activeIndex === 1}"
-                                           @click.prevent="initBigChart(1)">
-                                            <span class="d-none d-md-block">Week</span>
-                                            <span class="d-md-none">W</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <line-chart
-                                :height="350"
-                                ref="bigChart"
-                                :chart-data="bigLineChart.chartData"
-                                :extra-options="bigLineChart.extraOptions"
-                        >
-                        </line-chart>
-
+                        <img :src="layout" style="width:100% " alt="...">
                     </card> 
                     <br>
                     <!-- Safety Report Card -->
@@ -243,7 +208,7 @@
                         </div>
                       <br>
                         <div class="col-sm">
-                        <base-button block type="danger" icon="ni ni-check-bold" >Reserve Now</base-button>
+                        <router-link to="/healthdeclaration"><base-button block type="danger" icon="ni ni-check-bold" >Reserve Now</base-button></router-link>
                       </div>
                     </card>
                 </div>
@@ -270,14 +235,12 @@
 
   // Charts
   import * as chartConfigs from '@/components/Charts/config';
-  import LineChart from '@/components/Charts/LineChart';
 
   // Tables
   import RestaurantNotifsTable from './Dashboard/RestaurantNotifsTable';
 
   export default {
     components: {
-      LineChart,
       RestaurantNotifsTable,
       flatPicker
     },
@@ -309,6 +272,13 @@
             simple: "2020-09-15"
           }
       };
+    },
+    props: {
+      layout: {
+        type: String,
+        default: 'img/brand/seating_layout.jpeg',
+        description: 'seating_layout'
+      }
     },
     methods: {
       initBigChart(index) {

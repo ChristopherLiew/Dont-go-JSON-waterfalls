@@ -50,7 +50,7 @@
                                     </base-checkbox>
                                 </div>
                                 <hr>
-                                <base-button block type="danger">Proceed</base-button>
+                                <router-link to="/menu"><base-button block type="danger">Proceed</base-button></router-link>
                         </div>
                     </div>
                 </div>

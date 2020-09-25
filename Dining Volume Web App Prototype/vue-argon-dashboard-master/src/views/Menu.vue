@@ -177,7 +177,7 @@
             </div>    
             <br>
             <div>
-                <base-button block type="danger">Proceed to Order</base-button>
+                <router-link to="/checkoutpage"><base-button block type="danger">Proceed to Order</base-button></router-link>
             </div>
         </base-header>  
     </div>                    
