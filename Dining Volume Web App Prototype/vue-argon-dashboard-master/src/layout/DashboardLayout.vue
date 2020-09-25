@@ -16,8 +16,6 @@
 
         <sidebar-item :link="{name: 'My Profile', icon: 'ni ni-single-02 text-yellow', path: '/profile'}"/>
         <sidebar-item :link="{name: 'My Reservations', icon: 'ni ni-calendar-grid-58 text-green', path: '/checkoutpage'}"/>
-        <sidebar-item :link="{name: 'Confirmations', icon: 'ni ni-bold-up text-blue', path: '/confirmationpage'}"/>
-        <sidebar-item :link="{name: 'Menu', icon: 'ni ni-map-big text-grey', path: '/menu'}"/>
         <sidebar-item :link="{name: 'COVID19', icon: 'ni ni-notification-70 text-red', path: '/healthdeclaration'}"/>
         <sidebar-item :link="{name: 'Find Places', icon: 'ni ni-square-pin text-orange', path: '/maps'}"/>
         <sidebar-item :link="{name: 'Login', icon: 'ni ni-key-25 text-info', path: '/login'}"/>
