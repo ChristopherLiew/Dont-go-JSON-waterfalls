@@ -75,7 +75,7 @@
                                                 </div>
                                         </div>   
                                     </div>
-                                    <base-button block type="success">Add More</base-button>
+                                    <router-link to="/menu"><base-button block type="success">Add More</base-button></router-link>
                                     
                                 </div>
                         </div>
