@@ -24,7 +24,7 @@
 
                                     <div class = "row">
                                         <div class="col-sm-6">#123422439589Z</div>
-                                        <div class="col-sm-6">22 September 2020, 18:00</div>
+                                        <div class="col-sm-6">26 September 2020, 12:00</div>
                                         
                                     </div>
 

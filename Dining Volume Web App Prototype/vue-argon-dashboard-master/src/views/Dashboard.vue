@@ -276,7 +276,7 @@
     props: {
       layout: {
         type: String,
-        default: 'img/brand/seating_layout.jpeg',
+        default: 'img/brand/seating_layout_blue.jpeg',
         description: 'seating_layout'
       }
     },
